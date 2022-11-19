@@ -18,7 +18,7 @@
      store.commit('setToken', null)
      router.push({name: 'login'})
    }
-   throw error;
+   console.error(error);
  })
  
  export default axiosClient;

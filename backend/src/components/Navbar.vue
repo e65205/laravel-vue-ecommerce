@@ -83,6 +83,7 @@ const currentUser = computed(() => store.state.user.data);
 
 function logout() {
   store.dispatch("logout").then(() => {
+    debugger;
     router.push({ name: "login" });
   });
 }
