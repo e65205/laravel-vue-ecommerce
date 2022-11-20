@@ -12,7 +12,7 @@
           src="https://randomuser.me/api/portraits/men/1.jpg"
           class="rounded-full w-8 mr-2"
         />
-        <small>{{ currentUser.name }}</small>
+        <small>{{ currentUser.name }} </small>
         <ChevronDownIcon
           class="h-5 w-5 text-violet-200 hover:text-violet-100"
           aria-hidden="true"
@@ -83,7 +83,6 @@ const currentUser = computed(() => store.state.user.data);
 
 function logout() {
   store.dispatch("logout").then(() => {
-    debugger;
     router.push({ name: "login" });
   });
 }
