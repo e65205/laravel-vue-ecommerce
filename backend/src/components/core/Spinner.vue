@@ -24,24 +24,7 @@
     </div>
 </template>
 
-<script>
-import { ref, onMounted } from 'vue';
-
-const loading = ref(true);
-
-onMounted(() => {
-  setTimeout(() => {
-    loading.value = false;
-  }, 1000);
-});
-
-export default {
-  setup() {
-    return {
-      loading,
-    };
-  },
-};
+<script setup>
 
 
 </script>
