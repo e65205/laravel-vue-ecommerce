@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email'=> ['required', 'email'],
+            'email' => ['required', 'email'],
             'password' => 'required',
             'remember' => 'boolean'
         ]);

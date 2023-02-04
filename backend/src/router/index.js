@@ -1,7 +1,7 @@
-import {createRouter, createWebHistory, useRoute} from "vue-router";
+import { createRouter, createWebHistory, useRoute } from "vue-router";
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
-import Products from "../views/Products.vue";
+import Products from "../views/Products/Products.vue";
 import RequestPassword from "../views/RequestPassword.vue";
 import ResetPassword from "../views/ResetPassword.vue";
 import AppLayout from "../components/AppLayout.vue";
@@ -66,11 +66,11 @@ const router = createRouter({
     routes
 });
 
-router.beforeEach((to, from, next ) => {
-    if(to.meta.requiresAuth && !store.state.user.token) {
-        next({name: 'login'});
-    } else if(to.meta.requiresGuest && store.state.user.token) {
-        next({name: 'app.dashboard'});
+router.beforeEach((to, from, next) => {
+    if (to.meta.requiresAuth && !store.state.user.token) {
+        next({ name: 'login' });
+    } else if (to.meta.requiresGuest && store.state.user.token) {
+        next({ name: 'app.dashboard' });
     } else {
         next();
     }
